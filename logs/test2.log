@@ -1,0 +1,805 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-08-11T11:47:03.179-04:00  INFO 5724 --- [           main] c.e.v.VaadinHazelcastApplication         : Starting VaadinHazelcastApplication v1.0.0 using Java 17.0.15 with PID 5724 (/home/ubuntu/vaadin-hazelcast-app/target/vaadin-hazelcast-app-1.0.0.jar started by ubuntu in /home/ubuntu/vaadin-hazelcast-app)
+2025-08-11T11:47:03.182-04:00 DEBUG 5724 --- [           main] c.e.v.VaadinHazelcastApplication         : Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-08-11T11:47:03.183-04:00  INFO 5724 --- [           main] c.e.v.VaadinHazelcastApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-08-11T11:47:04.382-04:00  INFO 5724 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-11T11:47:04.412-04:00  INFO 5724 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 JPA repository interfaces.
+2025-08-11T11:47:05.231-04:00  INFO 5724 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-11T11:47:05.242-04:00  INFO 5724 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-11T11:47:05.243-04:00  INFO 5724 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-08-11T11:47:05.273-04:00  INFO 5724 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-11T11:47:05.274-04:00  INFO 5724 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2030 ms
+2025-08-11T11:47:05.282-04:00  WARN 5724 --- [           main] c.v.f.s.VaadinServletContextInitializer  : vaadin.whitelisted-packages is deprecated and may not be supported in the future. Use vaadin.allowed-packages instead.
+2025-08-11T11:47:05.424-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereHandler com.vaadin.hilla.push.PushEndpoint mapped to context-path: /HILLA/push
+2025-08-11T11:47:05.425-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.hilla.push.PushEndpoint
+2025-08-11T11:47:05.425-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.AtmosphereResourceLifecycleInterceptor : Atmosphere LifeCycle
+2025-08-11T11:47:05.425-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.client.TrackMessageSizeInterceptor :  Track Message Size Interceptor using |
+2025-08-11T11:47:05.425-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.SuspendTrackerInterceptor : UUID Tracking Interceptor
+2025-08-11T11:47:05.494-04:00  INFO 5724 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing AtmosphereFramework
+2025-08-11T11:47:05.559-04:00 DEBUG 5724 --- [           main] s.DefaultApplicationConfigurationFactory : Unable to fully determine correct flow-build-info.
+Accepting file 'file:/home/ubuntu/vaadin-hazelcast-app/target/vaadin-hazelcast-app-1.0.0.jar!/META-INF/VAADIN/config/flow-build-info.json'
+2025-08-11T11:47:05.984-04:00  INFO 5724 --- [           main] c.v.f.s.VaadinServletContextInitializer  : Search for subclasses and classes with annotations took 314 ms
+2025-08-11T11:47:06.201-04:00  INFO 5724 --- [           main] c.v.b.d.startup.DevModeStartupListener   : Starting dev-mode updaters in /home/ubuntu/vaadin-hazelcast-app folder.
+2025-08-11T11:47:06.212-04:00 DEBUG 5724 --- [           main] c.v.flow.server.frontend.FrontendUtils   : Auto-detected client-side router to use: react-router
+2025-08-11T11:47:06.213-04:00 DEBUG 5724 --- [           main] c.v.flow.server.frontend.FrontendUtils   : Auto-detected client-side router to use: react-router
+2025-08-11T11:47:06.241-04:00 DEBUG 5724 --- [           main] c.v.flow.server.frontend.FrontendUtils   : Auto-detected client-side router to use: react-router
+2025-08-11T11:47:06.258-04:00 DEBUG 5724 --- [           main] c.v.f.s.f.s.FullDependenciesScanner      : 
+ List of npm dependencies found in the project:
+  - @vaadin/accordion 24.7.6 com.vaadin.flow.component.accordion.Accordion
+  - @vaadin/accordion 24.7.6 com.vaadin.flow.component.accordion.AccordionPanel
+  - @vaadin/app-layout 24.7.6 com.vaadin.flow.component.applayout.AppLayout
+  - @vaadin/app-layout 24.7.6 com.vaadin.flow.component.applayout.DrawerToggle
+  - @vaadin/avatar 24.7.6 com.vaadin.flow.component.avatar.Avatar
+  - @vaadin/avatar-group 24.7.6 com.vaadin.flow.component.avatar.AvatarGroup
+  - @vaadin/button 24.7.6 com.vaadin.flow.component.applayout.DrawerToggle
+  - @vaadin/button 24.7.6 com.vaadin.flow.component.button.Button
+  - @vaadin/card 24.7.6 com.vaadin.flow.component.card.Card
+  - @vaadin/checkbox 24.7.6 com.vaadin.flow.component.checkbox.Checkbox
+  - @vaadin/checkbox 24.7.6 com.vaadin.flow.component.checkbox.CheckboxGroup$CheckBoxItem
+  - @vaadin/checkbox-group 24.7.6 com.vaadin.flow.component.checkbox.CheckboxGroup
+  - @vaadin/combo-box 24.7.6 com.vaadin.flow.component.combobox.ComboBox
+  - @vaadin/confirm-dialog 24.7.6 com.vaadin.flow.component.confirmdialog.ConfirmDialog
+  - @vaadin/context-menu 24.7.6 com.vaadin.flow.component.contextmenu.ContextMenu
+  - @vaadin/context-menu 24.7.6 com.vaadin.flow.component.contextmenu.ContextMenuBase
+  - @vaadin/context-menu 24.7.6 com.vaadin.flow.component.grid.contextmenu.GridContextMenu
+  - @vaadin/custom-field 24.7.6 com.vaadin.flow.component.customfield.CustomField
+  - @vaadin/date-picker 24.7.6 com.vaadin.flow.component.datepicker.DatePicker
+  - @vaadin/date-picker 24.7.6 com.vaadin.flow.component.datetimepicker.DateTimePickerDatePicker
+  - @vaadin/date-time-picker 24.7.6 com.vaadin.flow.component.datetimepicker.DateTimePicker
+  - @vaadin/details 24.7.6 com.vaadin.flow.component.accordion.AccordionPanel
+  - @vaadin/details 24.7.6 com.vaadin.flow.component.details.Details
+  - @vaadin/dialog 24.7.6 com.vaadin.flow.component.dialog.Dialog
+  - @vaadin/email-field 24.7.6 com.vaadin.flow.component.textfield.EmailField
+  - @vaadin/field-highlighter 24.7.6 com.vaadin.flow.component.fieldhighlighter.FieldHighlighterInitializer
+  - @vaadin/form-layout 24.7.6 com.vaadin.flow.component.formlayout.FormLayout
+  - @vaadin/form-layout 24.7.6 com.vaadin.flow.component.formlayout.FormLayout$FormItem
+  - @vaadin/grid 24.7.6 com.vaadin.flow.component.grid.Grid
+  - @vaadin/grid 24.7.6 com.vaadin.flow.component.treegrid.TreeGrid
+  - @vaadin/horizontal-layout 24.7.6 com.vaadin.flow.component.orderedlayout.HorizontalLayout
+  - @vaadin/icon 24.7.6 com.vaadin.flow.component.icon.AbstractIcon
+  - @vaadin/icon 24.7.6 com.vaadin.flow.component.icon.FontIcon
+  - @vaadin/icon 24.7.6 com.vaadin.flow.component.icon.Icon
+  - @vaadin/icon 24.7.6 com.vaadin.flow.component.icon.SvgIcon
+  - @vaadin/icons 24.7.6 com.vaadin.flow.component.icon.Icon
+  - @vaadin/integer-field 24.7.6 com.vaadin.flow.component.textfield.IntegerField
+  - @vaadin/item 24.7.6 com.vaadin.flow.component.listbox.VaadinItem
+  - @vaadin/list-box 24.7.6 com.vaadin.flow.component.listbox.ListBox
+  - @vaadin/list-box 24.7.6 com.vaadin.flow.component.listbox.ListBoxBase
+  - @vaadin/list-box 24.7.6 com.vaadin.flow.component.listbox.MultiSelectListBox
+  - @vaadin/login 24.7.6 com.vaadin.flow.component.login.LoginForm
+  - @vaadin/login 24.7.6 com.vaadin.flow.component.login.LoginOverlay
+  - @vaadin/menu-bar 24.7.6 com.vaadin.flow.component.menubar.MenuBar
+  - @vaadin/message-input 24.7.6 com.vaadin.flow.component.messages.MessageInput
+  - @vaadin/message-list 24.7.6 com.vaadin.flow.component.messages.MessageList
+  - @vaadin/multi-select-combo-box 24.7.6 com.vaadin.flow.component.combobox.MultiSelectComboBox
+  - @vaadin/notification 24.7.6 com.vaadin.flow.component.notification.Notification
+  - @vaadin/number-field 24.7.6 com.vaadin.flow.component.textfield.NumberField
+  - @vaadin/password-field 24.7.6 com.vaadin.flow.component.textfield.PasswordField
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.example.vaadinapp.views.MainView
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.accordion.Accordion
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.accordion.AccordionPanel
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.applayout.AppLayout
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.applayout.DrawerToggle
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.avatar.Avatar
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.avatar.AvatarGroup
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.button.Button
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.card.Card
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.checkbox.Checkbox
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.checkbox.CheckboxGroup
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.checkbox.CheckboxGroup$CheckBoxItem
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.combobox.ComboBox
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.combobox.MultiSelectComboBox
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.confirmdialog.ConfirmDialog
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.contextmenu.ContextMenu
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.contextmenu.ContextMenuBase
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.contextmenu.MenuItem
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.contextmenu.MenuItemBase
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.customfield.CustomField
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.datepicker.DatePicker
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.datetimepicker.DateTimePicker
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.datetimepicker.DateTimePickerDatePicker
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.datetimepicker.DateTimePickerTimePicker
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.details.Details
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.dialog.Dialog
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.formlayout.FormLayout
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.formlayout.FormLayout$FormItem
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.grid.ColumnGroup
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.grid.Grid
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.grid.Grid$Column
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.grid.GridSelectionColumn
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.grid.contextmenu.GridContextMenu
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.grid.contextmenu.GridMenuItem
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.icon.AbstractIcon
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.icon.FontIcon
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.icon.Icon
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.icon.SvgIcon
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.listbox.ListBox
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.listbox.ListBoxBase
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.listbox.MultiSelectListBox
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.listbox.VaadinItem
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.login.LoginForm
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.login.LoginOverlay
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.menubar.MenuBar
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.menubar.MenuBarItem
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.menubar.MenuBarRootItem
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.messages.MessageInput
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.messages.MessageList
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.notification.Notification
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.orderedlayout.HorizontalLayout
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.orderedlayout.Scroller
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.orderedlayout.VerticalLayout
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.popover.Popover
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.progressbar.ProgressBar
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.radiobutton.RadioButton
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.radiobutton.RadioButtonGroup
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.select.Select
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.select.VaadinItem
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.splitlayout.SplitLayout
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.tabs.Tab
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.tabs.Tabs
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.textfield.BigDecimalField
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.textfield.EmailField
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.textfield.IntegerField
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.textfield.NumberField
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.textfield.PasswordField
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.textfield.TextArea
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.textfield.TextField
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.timepicker.TimePicker
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.treegrid.TreeGrid
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.upload.Upload
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.component.virtuallist.VirtualList
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.theme.lumo.Lumo
+  - @vaadin/polymer-legacy-adapter 24.7.6 com.vaadin.flow.theme.material.Material
+  - @vaadin/popover 24.7.6 com.vaadin.flow.component.popover.Popover
+  - @vaadin/progress-bar 24.7.6 com.vaadin.flow.component.progressbar.ProgressBar
+  - @vaadin/radio-group 24.7.6 com.vaadin.flow.component.radiobutton.RadioButton
+  - @vaadin/radio-group 24.7.6 com.vaadin.flow.component.radiobutton.RadioButtonGroup
+  - @vaadin/scroller 24.7.6 com.vaadin.flow.component.orderedlayout.Scroller
+  - @vaadin/select 24.7.6 com.vaadin.flow.component.select.Select
+  - @vaadin/side-nav 24.7.6 com.vaadin.flow.component.sidenav.SideNav
+  - @vaadin/side-nav 24.7.6 com.vaadin.flow.component.sidenav.SideNavItem
+  - @vaadin/split-layout 24.7.6 com.vaadin.flow.component.splitlayout.SplitLayout
+  - @vaadin/tabs 24.7.6 com.vaadin.flow.component.tabs.Tab
+  - @vaadin/tabs 24.7.6 com.vaadin.flow.component.tabs.Tabs
+  - @vaadin/tabsheet 24.7.6 com.vaadin.flow.component.tabs.TabSheet
+  - @vaadin/text-area 24.7.6 com.vaadin.flow.component.textfield.TextArea
+  - @vaadin/text-field 24.7.6 com.vaadin.flow.component.textfield.TextField
+  - @vaadin/time-picker 24.7.6 com.vaadin.flow.component.datetimepicker.DateTimePickerTimePicker
+  - @vaadin/time-picker 24.7.6 com.vaadin.flow.component.timepicker.TimePicker
+  - @vaadin/tooltip 24.7.6 com.vaadin.flow.component.grid.Grid
+  - @vaadin/tooltip 24.7.6 com.vaadin.flow.component.menubar.MenuBar
+  - @vaadin/tooltip 24.7.6 com.vaadin.flow.component.shared.Tooltip
+  - @vaadin/tooltip 24.7.6 com.vaadin.flow.component.shared.TooltipConfiguration
+  - @vaadin/tooltip 24.7.6 com.vaadin.flow.component.treegrid.TreeGrid
+  - @vaadin/upload 24.7.6 com.vaadin.flow.component.upload.Upload
+  - @vaadin/vaadin-lumo-styles 24.7.6 com.vaadin.flow.theme.lumo.Lumo
+  - @vaadin/vaadin-material-styles 24.7.6 com.vaadin.flow.theme.material.Material
+  - @vaadin/vaadin-themable-mixin 24.7.6 com.vaadin.flow.theme.lumo.Lumo
+  - @vaadin/vaadin-themable-mixin 24.7.6 com.vaadin.flow.theme.material.Material
+  - @vaadin/vertical-layout 24.7.6 com.example.vaadinapp.views.MainView
+  - @vaadin/vertical-layout 24.7.6 com.vaadin.flow.component.orderedlayout.VerticalLayout
+  - @vaadin/virtual-list 24.7.6 com.vaadin.flow.component.virtuallist.VirtualList
+  - date-fns 2.29.3 com.vaadin.flow.component.datepicker.DatePicker
+  - date-fns 2.29.3 com.vaadin.flow.component.datetimepicker.DateTimePickerDatePicker
+2025-08-11T11:47:06.272-04:00 DEBUG 5724 --- [           main] c.v.f.s.f.s.FullDependenciesScanner      : 
+ List of @JsModule found in the project:
+  - ./ReactRouterOutletElement.tsx class com.vaadin.flow.component.react.ReactRouterOutlet
+  - ./comboBoxConnector.js class com.vaadin.flow.component.combobox.ComboBox
+  - ./comboBoxConnector.js class com.vaadin.flow.component.combobox.MultiSelectComboBox
+  - ./contextMenuConnector.js class com.vaadin.flow.component.contextmenu.ContextMenu
+  - ./contextMenuConnector.js class com.vaadin.flow.component.contextmenu.ContextMenuBase
+  - ./contextMenuConnector.js class com.vaadin.flow.component.grid.contextmenu.GridContextMenu
+  - ./contextMenuTargetConnector.js class com.vaadin.flow.component.contextmenu.ContextMenu
+  - ./contextMenuTargetConnector.js class com.vaadin.flow.component.contextmenu.ContextMenuBase
+  - ./contextMenuTargetConnector.js class com.vaadin.flow.component.grid.contextmenu.GridContextMenu
+  - ./datepickerConnector.js class com.vaadin.flow.component.datepicker.DatePicker
+  - ./datepickerConnector.js class com.vaadin.flow.component.datetimepicker.DateTimePickerDatePicker
+  - ./disableOnClickFunctions.js class com.vaadin.flow.component.shared.internal.DisableOnClickController
+  - ./dndConnector.js interface com.vaadin.flow.component.dnd.DragSource
+  - ./dndConnector.js interface com.vaadin.flow.component.dnd.DropTarget
+  - ./flow-component-renderer.js class com.vaadin.flow.component.combobox.ComboBox
+  - ./flow-component-renderer.js class com.vaadin.flow.component.combobox.MultiSelectComboBox
+  - ./flow-component-renderer.js class com.vaadin.flow.component.contextmenu.ContextMenu
+  - ./flow-component-renderer.js class com.vaadin.flow.component.contextmenu.ContextMenuBase
+  - ./flow-component-renderer.js class com.vaadin.flow.component.dialog.Dialog
+  - ./flow-component-renderer.js class com.vaadin.flow.component.grid.Grid
+  - ./flow-component-renderer.js class com.vaadin.flow.component.grid.contextmenu.GridContextMenu
+  - ./flow-component-renderer.js class com.vaadin.flow.component.notification.Notification
+  - ./flow-component-renderer.js class com.vaadin.flow.component.treegrid.HierarchyColumnComponentRenderer
+  - ./flow-component-renderer.js class com.vaadin.flow.component.treegrid.TreeGrid
+  - ./flow-component-renderer.js class com.vaadin.flow.component.virtuallist.VirtualList
+  - ./flow-component-renderer.js class com.vaadin.flow.data.renderer.BasicRenderer
+  - ./flow-component-renderer.js class com.vaadin.flow.data.renderer.ComponentRenderer
+  - ./flow-component-renderer.js class com.vaadin.flow.data.renderer.IconRenderer
+  - ./flow-component-renderer.js class com.vaadin.flow.data.renderer.LocalDateRenderer
+  - ./flow-component-renderer.js class com.vaadin.flow.data.renderer.LocalDateTimeRenderer
+  - ./flow-component-renderer.js class com.vaadin.flow.data.renderer.NativeButtonRenderer
+  - ./flow-component-renderer.js class com.vaadin.flow.data.renderer.NumberRenderer
+  - ./flow-component-renderer.js class com.vaadin.flow.data.renderer.TextRenderer
+  - ./gridConnector.ts class com.vaadin.flow.component.grid.Grid
+  - ./gridConnector.ts class com.vaadin.flow.component.treegrid.TreeGrid
+  - ./lit-renderer.ts class com.vaadin.flow.component.treegrid.HierarchyColumnComponentRenderer
+  - ./lit-renderer.ts class com.vaadin.flow.data.renderer.BasicRenderer
+  - ./lit-renderer.ts class com.vaadin.flow.data.renderer.ComponentRenderer
+  - ./lit-renderer.ts class com.vaadin.flow.data.renderer.IconRenderer
+  - ./lit-renderer.ts class com.vaadin.flow.data.renderer.LitRenderer
+  - ./lit-renderer.ts class com.vaadin.flow.data.renderer.LocalDateRenderer
+  - ./lit-renderer.ts class com.vaadin.flow.data.renderer.LocalDateTimeRenderer
+  - ./lit-renderer.ts class com.vaadin.flow.data.renderer.NativeButtonRenderer
+  - ./lit-renderer.ts class com.vaadin.flow.data.renderer.NumberRenderer
+  - ./lit-renderer.ts class com.vaadin.flow.data.renderer.TextRenderer
+  - ./menubarConnector.js class com.vaadin.flow.component.menubar.MenuBar
+  - ./messageListConnector.js class com.vaadin.flow.component.messages.MessageList
+  - ./selectConnector.js class com.vaadin.flow.component.select.Select
+  - ./tooltip.ts class com.vaadin.flow.component.shared.TooltipConfiguration
+  - ./vaadin-big-decimal-field.js class com.vaadin.flow.component.textfield.BigDecimalField
+  - ./vaadin-grid-flow-selection-column.js class com.vaadin.flow.component.grid.GridSelectionColumn
+  - ./vaadin-popover/popover.ts class com.vaadin.flow.component.popover.Popover
+  - ./vaadin-time-picker/timepickerConnector.js class com.vaadin.flow.component.datetimepicker.DateTimePickerTimePicker
+  - ./vaadin-time-picker/timepickerConnector.js class com.vaadin.flow.component.timepicker.TimePicker
+  - ./virtualListConnector.js class com.vaadin.flow.component.virtuallist.VirtualList
+  - @vaadin/accordion/src/vaadin-accordion-panel.js class com.vaadin.flow.component.accordion.AccordionPanel
+  - @vaadin/accordion/src/vaadin-accordion.js class com.vaadin.flow.component.accordion.Accordion
+  - @vaadin/app-layout/src/vaadin-app-layout.js class com.vaadin.flow.component.applayout.AppLayout
+  - @vaadin/app-layout/src/vaadin-drawer-toggle.js class com.vaadin.flow.component.applayout.DrawerToggle
+  - @vaadin/avatar-group/src/vaadin-avatar-group.js class com.vaadin.flow.component.avatar.AvatarGroup
+  - @vaadin/avatar/src/vaadin-avatar.js class com.vaadin.flow.component.avatar.Avatar
+  - @vaadin/button/src/vaadin-button.js class com.vaadin.flow.component.applayout.DrawerToggle
+  - @vaadin/button/src/vaadin-button.js class com.vaadin.flow.component.button.Button
+  - @vaadin/checkbox-group/src/vaadin-checkbox-group.js class com.vaadin.flow.component.checkbox.CheckboxGroup
+  - @vaadin/checkbox/src/vaadin-checkbox.js class com.vaadin.flow.component.checkbox.Checkbox
+  - @vaadin/checkbox/src/vaadin-checkbox.js class com.vaadin.flow.component.checkbox.CheckboxGroup$CheckBoxItem
+  - @vaadin/checkbox/src/vaadin-checkbox.js class com.vaadin.flow.component.grid.Grid
+  - @vaadin/checkbox/src/vaadin-checkbox.js class com.vaadin.flow.component.treegrid.TreeGrid
+  - @vaadin/combo-box/src/vaadin-combo-box.js class com.vaadin.flow.component.combobox.ComboBox
+  - @vaadin/common-frontend/ConnectionIndicator.js class com.vaadin.flow.component.UI
+  - @vaadin/common-frontend/ConnectionIndicator.js class com.vaadin.flow.component.webcomponent.WebComponentUI
+  - @vaadin/confirm-dialog/src/vaadin-confirm-dialog.js class com.vaadin.flow.component.confirmdialog.ConfirmDialog
+  - @vaadin/context-menu/src/vaadin-context-menu.js class com.vaadin.flow.component.contextmenu.ContextMenu
+  - @vaadin/context-menu/src/vaadin-context-menu.js class com.vaadin.flow.component.contextmenu.ContextMenuBase
+  - @vaadin/context-menu/src/vaadin-context-menu.js class com.vaadin.flow.component.grid.contextmenu.GridContextMenu
+  - @vaadin/custom-field/src/vaadin-custom-field.js class com.vaadin.flow.component.customfield.CustomField
+  - @vaadin/date-picker/src/vaadin-date-picker.js class com.vaadin.flow.component.datepicker.DatePicker
+  - @vaadin/date-picker/src/vaadin-date-picker.js class com.vaadin.flow.component.datetimepicker.DateTimePickerDatePicker
+  - @vaadin/date-time-picker/src/vaadin-date-time-picker.js class com.vaadin.flow.component.datetimepicker.DateTimePicker
+  - @vaadin/details/src/vaadin-details.js class com.vaadin.flow.component.accordion.AccordionPanel
+  - @vaadin/details/src/vaadin-details.js class com.vaadin.flow.component.details.Details
+  - @vaadin/dialog/src/vaadin-dialog.js class com.vaadin.flow.component.dialog.Dialog
+  - @vaadin/email-field/src/vaadin-email-field.js class com.vaadin.flow.component.textfield.EmailField
+  - @vaadin/field-highlighter/src/vaadin-field-highlighter.js class com.vaadin.flow.component.fieldhighlighter.FieldHighlighterInitializer
+  - @vaadin/form-layout/src/vaadin-form-item.js class com.vaadin.flow.component.formlayout.FormLayout$FormItem
+  - @vaadin/form-layout/src/vaadin-form-layout.js class com.vaadin.flow.component.formlayout.FormLayout
+  - @vaadin/grid/src/vaadin-grid-column-group.js class com.vaadin.flow.component.grid.ColumnGroup
+  - @vaadin/grid/src/vaadin-grid-column.js class com.vaadin.flow.component.grid.Grid
+  - @vaadin/grid/src/vaadin-grid-column.js class com.vaadin.flow.component.treegrid.TreeGrid
+  - @vaadin/grid/src/vaadin-grid-sorter.js class com.vaadin.flow.component.grid.Grid
+  - @vaadin/grid/src/vaadin-grid-sorter.js class com.vaadin.flow.component.treegrid.TreeGrid
+  - @vaadin/grid/src/vaadin-grid-tree-toggle.js class com.vaadin.flow.component.treegrid.TreeGrid
+  - @vaadin/grid/src/vaadin-grid.js class com.vaadin.flow.component.grid.Grid
+  - @vaadin/grid/src/vaadin-grid.js class com.vaadin.flow.component.treegrid.TreeGrid
+  - @vaadin/horizontal-layout/src/vaadin-horizontal-layout.js class com.vaadin.flow.component.orderedlayout.HorizontalLayout
+  - @vaadin/icon/src/vaadin-icon.js class com.vaadin.flow.component.icon.AbstractIcon
+  - @vaadin/icon/src/vaadin-icon.js class com.vaadin.flow.component.icon.FontIcon
+  - @vaadin/icon/src/vaadin-icon.js class com.vaadin.flow.component.icon.Icon
+  - @vaadin/icon/src/vaadin-icon.js class com.vaadin.flow.component.icon.SvgIcon
+  - @vaadin/icons/vaadin-iconset.js class com.vaadin.flow.component.icon.Icon
+  - @vaadin/integer-field/src/vaadin-integer-field.js class com.vaadin.flow.component.textfield.IntegerField
+  - @vaadin/item/src/vaadin-item.js class com.vaadin.flow.component.listbox.VaadinItem
+  - @vaadin/list-box/src/vaadin-list-box.js class com.vaadin.flow.component.listbox.ListBox
+  - @vaadin/list-box/src/vaadin-list-box.js class com.vaadin.flow.component.listbox.ListBoxBase
+  - @vaadin/list-box/src/vaadin-list-box.js class com.vaadin.flow.component.listbox.MultiSelectListBox
+  - @vaadin/login/src/vaadin-login-form.js class com.vaadin.flow.component.login.LoginForm
+  - @vaadin/login/src/vaadin-login-overlay.js class com.vaadin.flow.component.login.LoginOverlay
+  - @vaadin/menu-bar/src/vaadin-menu-bar.js class com.vaadin.flow.component.menubar.MenuBar
+  - @vaadin/message-input/src/vaadin-message-input.js class com.vaadin.flow.component.messages.MessageInput
+  - @vaadin/message-list/src/vaadin-message-list.js class com.vaadin.flow.component.messages.MessageList
+  - @vaadin/multi-select-combo-box/src/vaadin-multi-select-combo-box.js class com.vaadin.flow.component.combobox.MultiSelectComboBox
+  - @vaadin/notification/src/vaadin-notification.js class com.vaadin.flow.component.notification.Notification
+  - @vaadin/number-field/src/vaadin-number-field.js class com.vaadin.flow.component.textfield.NumberField
+  - @vaadin/password-field/src/vaadin-password-field.js class com.vaadin.flow.component.textfield.PasswordField
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.example.vaadinapp.views.MainView
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.accordion.Accordion
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.accordion.AccordionPanel
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.applayout.AppLayout
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.applayout.DrawerToggle
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.avatar.Avatar
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.avatar.AvatarGroup
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.button.Button
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.checkbox.Checkbox
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.checkbox.CheckboxGroup
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.checkbox.CheckboxGroup$CheckBoxItem
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.combobox.ComboBox
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.combobox.MultiSelectComboBox
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.confirmdialog.ConfirmDialog
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.contextmenu.ContextMenu
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.contextmenu.ContextMenuBase
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.contextmenu.MenuItem
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.contextmenu.MenuItemBase
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.customfield.CustomField
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.datepicker.DatePicker
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.datetimepicker.DateTimePicker
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.datetimepicker.DateTimePickerDatePicker
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.datetimepicker.DateTimePickerTimePicker
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.details.Details
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.dialog.Dialog
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.formlayout.FormLayout
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.formlayout.FormLayout$FormItem
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.grid.ColumnGroup
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.grid.Grid
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.grid.Grid$Column
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.grid.GridSelectionColumn
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.grid.contextmenu.GridContextMenu
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.grid.contextmenu.GridMenuItem
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.icon.AbstractIcon
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.icon.FontIcon
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.icon.Icon
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.icon.SvgIcon
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.listbox.ListBox
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.listbox.ListBoxBase
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.listbox.MultiSelectListBox
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.listbox.VaadinItem
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.login.LoginForm
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.login.LoginOverlay
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.menubar.MenuBar
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.menubar.MenuBarItem
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.menubar.MenuBarRootItem
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.messages.MessageInput
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.messages.MessageList
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.notification.Notification
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.orderedlayout.HorizontalLayout
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.orderedlayout.Scroller
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.orderedlayout.VerticalLayout
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.popover.Popover
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.progressbar.ProgressBar
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.radiobutton.RadioButton
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.radiobutton.RadioButtonGroup
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.select.Select
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.select.VaadinItem
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.splitlayout.SplitLayout
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.tabs.Tab
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.tabs.Tabs
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.textfield.BigDecimalField
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.textfield.EmailField
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.textfield.IntegerField
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.textfield.NumberField
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.textfield.PasswordField
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.textfield.TextArea
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.textfield.TextField
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.timepicker.TimePicker
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.treegrid.TreeGrid
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.upload.Upload
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.component.virtuallist.VirtualList
+  - @vaadin/polymer-legacy-adapter/style-modules.js class com.vaadin.flow.theme.lumo.Lumo
+  - @vaadin/popover/src/vaadin-popover.js class com.vaadin.flow.component.popover.Popover
+  - @vaadin/progress-bar/src/vaadin-progress-bar.js class com.vaadin.flow.component.progressbar.ProgressBar
+  - @vaadin/radio-group/src/vaadin-radio-button.js class com.vaadin.flow.component.radiobutton.RadioButton
+  - @vaadin/radio-group/src/vaadin-radio-group.js class com.vaadin.flow.component.radiobutton.RadioButtonGroup
+  - @vaadin/scroller/src/vaadin-scroller.js class com.vaadin.flow.component.orderedlayout.Scroller
+  - @vaadin/select/src/vaadin-select.js class com.vaadin.flow.component.select.Select
+  - @vaadin/side-nav/src/vaadin-side-nav-item.js class com.vaadin.flow.component.sidenav.SideNavItem
+  - @vaadin/side-nav/src/vaadin-side-nav.js class com.vaadin.flow.component.sidenav.SideNav
+  - @vaadin/split-layout/src/vaadin-split-layout.js class com.vaadin.flow.component.splitlayout.SplitLayout
+  - @vaadin/tabs/src/vaadin-tab.js class com.vaadin.flow.component.tabs.Tab
+  - @vaadin/tabs/src/vaadin-tabs.js class com.vaadin.flow.component.tabs.Tabs
+  - @vaadin/tabsheet/src/vaadin-tabsheet.js class com.vaadin.flow.component.tabs.TabSheet
+  - @vaadin/text-area/src/vaadin-text-area.js class com.vaadin.flow.component.textfield.TextArea
+  - @vaadin/text-field/src/vaadin-text-field.js class com.vaadin.flow.component.textfield.TextField
+  - @vaadin/time-picker/src/vaadin-time-picker.js class com.vaadin.flow.component.datetimepicker.DateTimePickerTimePicker
+  - @vaadin/time-picker/src/vaadin-time-picker.js class com.vaadin.flow.component.timepicker.TimePicker
+  - @vaadin/tooltip/src/vaadin-tooltip.js class com.vaadin.flow.component.grid.Grid
+  - @vaadin/tooltip/src/vaadin-tooltip.js class com.vaadin.flow.component.menubar.MenuBar
+  - @vaadin/tooltip/src/vaadin-tooltip.js class com.vaadin.flow.component.shared.Tooltip
+  - @vaadin/tooltip/src/vaadin-tooltip.js class com.vaadin.flow.component.treegrid.TreeGrid
+  - @vaadin/upload/src/vaadin-upload.js class com.vaadin.flow.component.upload.Upload
+  - @vaadin/vaadin-lumo-styles/color-global.js class com.vaadin.flow.theme.lumo.Lumo
+  - @vaadin/vaadin-lumo-styles/sizing.js class com.vaadin.flow.theme.lumo.Lumo
+  - @vaadin/vaadin-lumo-styles/spacing.js class com.vaadin.flow.theme.lumo.Lumo
+  - @vaadin/vaadin-lumo-styles/style.js class com.vaadin.flow.theme.lumo.Lumo
+  - @vaadin/vaadin-lumo-styles/typography-global.js class com.vaadin.flow.theme.lumo.Lumo
+  - @vaadin/vaadin-lumo-styles/vaadin-iconset.js class com.vaadin.flow.theme.lumo.Lumo
+  - @vaadin/vertical-layout/src/vaadin-vertical-layout.js class com.example.vaadinapp.views.MainView
+  - @vaadin/vertical-layout/src/vaadin-vertical-layout.js class com.vaadin.flow.component.orderedlayout.VerticalLayout
+  - @vaadin/virtual-list/src/vaadin-virtual-list.js class com.vaadin.flow.component.virtuallist.VirtualList
+2025-08-11T11:47:06.274-04:00 DEBUG 5724 --- [           main] c.v.f.s.f.s.FullDependenciesScanner      : 
+ List of @JavaScript found in the project:
+2025-08-11T11:47:06.275-04:00  INFO 5724 --- [           main] c.v.f.s.f.s.FullDependenciesScanner      : Visited 97 classes. Took 30 ms.
+2025-08-11T11:47:06.288-04:00  INFO 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil    : Checking if a development mode bundle build is needed
+2025-08-11T11:47:06.303-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "@vaadin/common-frontend": "0.0.19" line.
+2025-08-11T11:47:06.303-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "react-dom": "18.3.1" line.
+2025-08-11T11:47:06.303-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "construct-style-sheets-polyfill": "3.1.0" line.
+2025-08-11T11:47:06.303-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "lit": "3.3.0" line.
+2025-08-11T11:47:06.303-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "@polymer/polymer": "3.5.2" line.
+2025-08-11T11:47:06.303-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "react": "18.3.1" line.
+2025-08-11T11:47:06.303-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "react-router": "7.5.2" line.
+2025-08-11T11:47:06.306-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "strip-css-comments": "5.0.0" line.
+2025-08-11T11:47:06.307-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "workbox-build": "7.3.0" line.
+2025-08-11T11:47:06.307-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "rollup-plugin-visualizer": "5.14.0" line.
+2025-08-11T11:47:06.307-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "glob": "11.0.2" line.
+2025-08-11T11:47:06.307-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "@preact/signals-react-transform": "0.5.1" line.
+2025-08-11T11:47:06.307-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "@rollup/plugin-replace": "6.0.2" line.
+2025-08-11T11:47:06.307-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "@babel/preset-react": "7.26.3" line.
+2025-08-11T11:47:06.307-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "@types/react-dom": "18.3.6" line.
+2025-08-11T11:47:06.307-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "async": "3.2.6" line.
+2025-08-11T11:47:06.307-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "workbox-core": "7.3.0" line.
+2025-08-11T11:47:06.307-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "vite": "6.3.4" line.
+2025-08-11T11:47:06.307-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "rollup-plugin-brotli": "3.1.0" line.
+2025-08-11T11:47:06.307-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "@rollup/pluginutils": "5.1.4" line.
+2025-08-11T11:47:06.307-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "vite-plugin-checker": "0.9.1" line.
+2025-08-11T11:47:06.307-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "@types/react": "18.3.20" line.
+2025-08-11T11:47:06.307-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "workbox-precaching": "7.3.0" line.
+2025-08-11T11:47:06.307-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "transform-ast": "2.4.4" line.
+2025-08-11T11:47:06.308-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "typescript": "5.7.3" line.
+2025-08-11T11:47:06.308-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "@vitejs/plugin-react": "4.4.1" line.
+2025-08-11T11:47:06.308-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added 26 default dependencies to main package.json
+2025-08-11T11:47:06.311-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/bundles with version 24.7.6
+2025-08-11T11:47:06.311-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/polymer-legacy-adapter with version 24.7.6
+2025-08-11T11:47:06.311-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/vaadin-development-mode-detector with version 2.0.7
+2025-08-11T11:47:06.311-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/vaadin-usage-statistics with version 2.1.3
+2025-08-11T11:47:06.314-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/react-components with version 24.7.6 for mode react
+2025-08-11T11:47:06.316-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "date-fns": "2.29.3" line.
+2025-08-11T11:47:06.316-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "@vaadin/polymer-legacy-adapter": "24.7.6" line.
+2025-08-11T11:47:06.316-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "@vaadin/vaadin-themable-mixin": "24.7.6" line.
+2025-08-11T11:47:06.316-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "@vaadin/vaadin-lumo-styles": "24.7.6" line.
+2025-08-11T11:47:06.316-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil$1  : Added "@vaadin/vaadin-material-styles": "24.7.6" line.
+2025-08-11T11:47:06.322-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/bundles with version 24.7.6
+2025-08-11T11:47:06.323-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/polymer-legacy-adapter with version 24.7.6
+2025-08-11T11:47:06.323-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/vaadin-development-mode-detector with version 2.0.7
+2025-08-11T11:47:06.323-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/vaadin-usage-statistics with version 2.1.3
+2025-08-11T11:47:06.323-04:00 DEBUG 5724 --- [           main] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/react-components with version 24.7.6 for mode react
+2025-08-11T11:47:06.463-04:00 DEBUG 5724 --- [           main] c.v.flow.server.frontend.FileIOUtils     : writing to file '/home/ubuntu/vaadin-hazelcast-app/src/main/frontend/generated/flow/generated-flow-webcomponent-imports.js' because content does not match
+2025-08-11T11:47:06.512-04:00  INFO 5724 --- [           main] c.v.f.s.frontend.BundleValidationUtil    : A development mode bundle build is not needed
+2025-08-11T11:47:06.529-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "@vaadin/common-frontend": "0.0.19" line.
+2025-08-11T11:47:06.529-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "react-dom": "18.3.1" line.
+2025-08-11T11:47:06.529-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "construct-style-sheets-polyfill": "3.1.0" line.
+2025-08-11T11:47:06.529-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "lit": "3.3.0" line.
+2025-08-11T11:47:06.529-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "@polymer/polymer": "3.5.2" line.
+2025-08-11T11:47:06.529-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "react": "18.3.1" line.
+2025-08-11T11:47:06.529-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "react-router": "7.5.2" line.
+2025-08-11T11:47:06.530-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "strip-css-comments": "5.0.0" line.
+2025-08-11T11:47:06.530-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "workbox-build": "7.3.0" line.
+2025-08-11T11:47:06.530-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "rollup-plugin-visualizer": "5.14.0" line.
+2025-08-11T11:47:06.530-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "glob": "11.0.2" line.
+2025-08-11T11:47:06.530-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "@preact/signals-react-transform": "0.5.1" line.
+2025-08-11T11:47:06.530-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "@rollup/plugin-replace": "6.0.2" line.
+2025-08-11T11:47:06.530-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "@babel/preset-react": "7.26.3" line.
+2025-08-11T11:47:06.530-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "@types/react-dom": "18.3.6" line.
+2025-08-11T11:47:06.531-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "async": "3.2.6" line.
+2025-08-11T11:47:06.531-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "workbox-core": "7.3.0" line.
+2025-08-11T11:47:06.531-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "vite": "6.3.4" line.
+2025-08-11T11:47:06.531-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "rollup-plugin-brotli": "3.1.0" line.
+2025-08-11T11:47:06.531-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "@rollup/pluginutils": "5.1.4" line.
+2025-08-11T11:47:06.531-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "vite-plugin-checker": "0.9.1" line.
+2025-08-11T11:47:06.531-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "@types/react": "18.3.20" line.
+2025-08-11T11:47:06.531-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "workbox-precaching": "7.3.0" line.
+2025-08-11T11:47:06.531-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "transform-ast": "2.4.4" line.
+2025-08-11T11:47:06.531-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "typescript": "5.7.3" line.
+2025-08-11T11:47:06.531-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added "@vitejs/plugin-react": "4.4.1" line.
+2025-08-11T11:47:06.531-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskGeneratePackageJson        : Added 26 default dependencies to main package.json
+2025-08-11T11:47:06.534-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.flow.server.frontend.FileIOUtils     : skipping writing to file '/home/ubuntu/vaadin-hazelcast-app/src/main/frontend/generated/vaadin-featureflags.js' because content matches
+2025-08-11T11:47:06.537-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/bundles with version 24.7.6
+2025-08-11T11:47:06.537-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/polymer-legacy-adapter with version 24.7.6
+2025-08-11T11:47:06.537-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/vaadin-development-mode-detector with version 2.0.7
+2025-08-11T11:47:06.538-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/vaadin-usage-statistics with version 2.1.3
+2025-08-11T11:47:06.538-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/react-components with version 24.7.6 for mode react
+2025-08-11T11:47:06.538-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.frontend.TaskUpdatePackages      : Added "date-fns": "2.29.3" line.
+2025-08-11T11:47:06.538-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.frontend.TaskUpdatePackages      : Added "@vaadin/polymer-legacy-adapter": "24.7.6" line.
+2025-08-11T11:47:06.538-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.frontend.TaskUpdatePackages      : Added "@vaadin/vaadin-themable-mixin": "24.7.6" line.
+2025-08-11T11:47:06.538-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.frontend.TaskUpdatePackages      : Added "@vaadin/vaadin-lumo-styles": "24.7.6" line.
+2025-08-11T11:47:06.538-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.frontend.TaskUpdatePackages      : Added "@vaadin/vaadin-material-styles": "24.7.6" line.
+2025-08-11T11:47:06.539-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/bundles with version 24.7.6
+2025-08-11T11:47:06.539-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/polymer-legacy-adapter with version 24.7.6
+2025-08-11T11:47:06.539-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/vaadin-development-mode-detector with version 2.0.7
+2025-08-11T11:47:06.540-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/vaadin-usage-statistics with version 2.1.3
+2025-08-11T11:47:06.540-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/react-components with version 24.7.6 for mode react
+2025-08-11T11:47:06.542-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.frontend.TaskUpdatePackages      : Added 9 dependencies to main package.json
+2025-08-11T11:47:06.545-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/bundles with version 24.7.6
+2025-08-11T11:47:06.545-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/polymer-legacy-adapter with version 24.7.6
+2025-08-11T11:47:06.545-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/vaadin-development-mode-detector with version 2.0.7
+2025-08-11T11:47:06.545-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/vaadin-usage-statistics with version 2.1.3
+2025-08-11T11:47:06.546-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.frontend.VersionsJsonConverter   : versions.json adds dependency @vaadin/react-components with version 24.7.6 for mode react
+2025-08-11T11:47:06.548-04:00  INFO 5724 --- [in-dev-server-1] c.v.f.s.frontend.TaskCopyFrontendFiles   : Copying frontend resources from jar files ...
+2025-08-11T11:47:06.554-04:00  INFO 5724 --- [in-dev-server-1] c.v.f.s.frontend.TaskCopyFrontendFiles   : Visited 0 resources. Took 5 ms.
+2025-08-11T11:47:06.555-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.s.f.TaskCopyLocalFrontendFiles     : Found no local frontend resources for the project
+2025-08-11T11:47:06.566-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.flow.server.frontend.FileIOUtils     : skipping writing to file '/home/ubuntu/vaadin-hazelcast-app/target/vaadin-dev-server-settings.json' because content matches
+2025-08-11T11:47:06.566-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.server.frontend.TaskUpdateImports  : Start updating imports file and chunk files.
+2025-08-11T11:47:06.567-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.server.frontend.TaskUpdateImports  : Start collecting scanned JS modules and scripts.
+2025-08-11T11:47:06.567-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.server.frontend.TaskUpdateImports  : Found 1 modules, 1 scripts, 1 dev-mode modules and 1 dev-mode scripts.
+2025-08-11T11:47:06.591-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.server.frontend.TaskUpdateImports  : JS modules and scripts collected in 24 ms.
+2025-08-11T11:47:06.591-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.server.frontend.TaskUpdateImports  : Start sorting imports to lazy and eager.
+2025-08-11T11:47:06.591-04:00 DEBUG 5724 --- [in-dev-server-1] c.v.f.server.frontend.TaskUpdateImports  : Imports sorting took 0 ms.
+2025-08-11T11:47:06.663-04:00  WARN 5724 --- [           main] c.h.i.impl.HazelcastInstanceFactory      : Hazelcast is starting in a Java modular environment (Java 9 and newer) but without proper access to required Java packages. Use additional Java arguments to provide Hazelcast access to Java internal API. The internal API access is used to get the best performance results. Arguments to be used:
+ --add-modules java.se --add-exports java.base/jdk.internal.ref=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/sun.nio.ch=ALL-UNNAMED --add-opens java.management/sun.management=ALL-UNNAMED --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED
+2025-08-11T11:47:06.781-04:00  INFO 5724 --- [           main] com.hazelcast.system.logo                : [169.254.0.21]:5701 [vaadin-cluster] [5.5.0] 
+    o    o     o     o---o   o--o o      o---o     o     o----o o--o--o
+    |    |    / \       /         |     /         / \    |         |
+    o----o       o     o   o----o |    o             o   o----o    |
+    |    |  *     \   /           |     \       *     \       |    |
+    o    o *       o o---o   o--o o----o o---o *       o o----o    o
+
+2025-08-11T11:47:06.781-04:00  INFO 5724 --- [           main] com.hazelcast.system                     : [169.254.0.21]:5701 [vaadin-cluster] [5.5.0] Copyright (c) 2008-2024, Hazelcast, Inc. All Rights Reserved.
+2025-08-11T11:47:06.782-04:00  INFO 5724 --- [           main] com.hazelcast.system                     : [169.254.0.21]:5701 [vaadin-cluster] [5.5.0] Hazelcast Platform 5.5.0 (20240725) starting at [169.254.0.21]:5701
+2025-08-11T11:47:06.782-04:00  INFO 5724 --- [           main] com.hazelcast.system                     : [169.254.0.21]:5701 [vaadin-cluster] [5.5.0] Cluster name: vaadin-cluster
+2025-08-11T11:47:06.782-04:00  INFO 5724 --- [           main] com.hazelcast.system                     : [169.254.0.21]:5701 [vaadin-cluster] [5.5.0] Integrity Checker is disabled. Fail-fast on corrupted executables will not be performed. For more information, see the documentation for Integrity Checker.
+2025-08-11T11:47:06.785-04:00  INFO 5724 --- [           main] com.hazelcast.system                     : [169.254.0.21]:5701 [vaadin-cluster] [5.5.0] The Jet engine is disabled.
+To enable the Jet engine on the members, do one of the following:
+  - Change member config using Java API: config.getJetConfig().setEnabled(true)
+  - Change XML/YAML configuration property: Set hazelcast.jet.enabled to true
+  - Add system property: -Dhz.jet.enabled=true (for Hazelcast embedded, works only when loading config via Config.load)
+  - Add environment variable: HZ_JET_ENABLED=true (recommended when running container image. For Hazelcast embedded, works only when loading config via Config.load)
+2025-08-11T11:47:07.567-04:00  INFO 5724 --- [           main] com.hazelcast.system.security            : [169.254.0.21]:5701 [vaadin-cluster] [5.5.0] Enable DEBUG/FINE log level for log category com.hazelcast.system.security  or use -Dhazelcast.security.recommendations system property to see 🔒 security recommendations and the status of current config.
+2025-08-11T11:47:07.649-04:00  INFO 5724 --- [           main] com.hazelcast.instance.impl.Node         : [169.254.0.21]:5701 [vaadin-cluster] [5.5.0] Using Multicast discovery
+2025-08-11T11:47:07.899-04:00  INFO 5724 --- [           main] c.h.internal.diagnostics.Diagnostics     : [169.254.0.21]:5701 [vaadin-cluster] [5.5.0] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.
+2025-08-11T11:47:07.906-04:00  INFO 5724 --- [           main] com.hazelcast.core.LifecycleService      : [169.254.0.21]:5701 [vaadin-cluster] [5.5.0] [169.254.0.21]:5701 is STARTING
+2025-08-11T11:47:10.342-04:00  INFO 5724 --- [           main] c.h.internal.cluster.ClusterService      : [169.254.0.21]:5701 [vaadin-cluster] [5.5.0] 
+
+Members {size:1, ver:1} [
+	Member [169.254.0.21]:5701 - 1b1b3f5c-553d-4b47-a8a0-efa92f1fda55 this
+]
+
+2025-08-11T11:47:10.359-04:00  INFO 5724 --- [           main] com.hazelcast.core.LifecycleService      : [169.254.0.21]:5701 [vaadin-cluster] [5.5.0] [169.254.0.21]:5701 is STARTED
+2025-08-11T11:47:10.501-04:00  INFO 5724 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-11T11:47:10.553-04:00  INFO 5724 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-08-11T11:47:10.590-04:00  INFO 5724 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-11T11:47:10.834-04:00  INFO 5724 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-11T11:47:10.863-04:00  INFO 5724 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-11T11:47:11.110-04:00  INFO 5724 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-08-11T11:47:11.113-04:00  INFO 5724 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-11T11:47:11.136-04:00  WARN 5724 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-11T11:47:11.168-04:00  INFO 5724 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-11T11:47:11.485-04:00  INFO 5724 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-11T11:47:11.490-04:00  INFO 5724 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11T11:47:11.628-04:00  WARN 5724 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-11T11:47:11.943-04:00  INFO 5724 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-08-11T11:47:12.007-04:00  WARN 5724 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: d9f41bd4-292c-461e-832c-519d12d272dd
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-08-11T11:47:12.025-04:00  INFO 5724 --- [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-08-11T11:47:12.177-04:00 DEBUG 5724 --- [           main] c.v.f.s.c.JSR356WebsocketInitializer     : Atmosphere available, initializing
+2025-08-11T11:47:12.178-04:00 DEBUG 5724 --- [           main] c.v.f.s.c.JSR356WebsocketInitializer     : Checking if springServlet is a Vaadin Servlet
+2025-08-11T11:47:12.178-04:00 DEBUG 5724 --- [           main] c.v.f.s.c.JSR356WebsocketInitializer     : Initializing Atmosphere for Vaadin Servlet: springServlet
+2025-08-11T11:47:12.178-04:00 DEBUG 5724 --- [           main] c.v.f.s.c.JSR356WebsocketInitializer     : Creating AtmosphereFramework for springServlet
+2025-08-11T11:47:12.180-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+2025-08-11T11:47:12.180-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+2025-08-11T11:47:12.206-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+2025-08-11T11:47:12.212-04:00  INFO 5724 --- [           main] org.atmosphere.util.ForkJoinPool         : Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+2025-08-11T11:47:12.217-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+2025-08-11T11:47:12.220-04:00  INFO 5724 --- [           main] o.a.container.JSR356AsyncSupport         : JSR 356 Mapping path /VAADIN/push
+2025-08-11T11:47:12.228-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installing Default AtmosphereInterceptors
+2025-08-11T11:47:12.228-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+2025-08-11T11:47:12.228-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+2025-08-11T11:47:12.228-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+2025-08-11T11:47:12.229-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+2025-08-11T11:47:12.229-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+2025-08-11T11:47:12.229-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+2025-08-11T11:47:12.229-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+2025-08-11T11:47:12.230-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+2025-08-11T11:47:12.230-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+2025-08-11T11:47:12.230-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+2025-08-11T11:47:12.231-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+2025-08-11T11:47:12.231-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+2025-08-11T11:47:12.231-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+2025-08-11T11:47:12.231-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+2025-08-11T11:47:12.231-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+2025-08-11T11:47:12.231-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+2025-08-11T11:47:12.231-04:00  INFO 5724 --- [           main] o.a.interceptor.HeartbeatInterceptor     : HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+2025-08-11T11:47:12.231-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+2025-08-11T11:47:12.231-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+2025-08-11T11:47:12.231-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+2025-08-11T11:47:12.231-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+2025-08-11T11:47:12.231-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+2025-08-11T11:47:12.231-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+2025-08-11T11:47:12.231-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+2025-08-11T11:47:12.232-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+2025-08-11T11:47:12.232-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+2025-08-11T11:47:12.232-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+2025-08-11T11:47:12.232-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Broadcaster Shared List Resources: false
+2025-08-11T11:47:12.232-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Broadcaster Polling Wait Time 100
+2025-08-11T11:47:12.232-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Shared ExecutorService supported: true
+2025-08-11T11:47:12.232-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+2025-08-11T11:47:12.232-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Async I/O Thread Pool Size: 200
+2025-08-11T11:47:12.232-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+2025-08-11T11:47:12.232-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+2025-08-11T11:47:12.232-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+2025-08-11T11:47:12.234-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Invoke AtmosphereInterceptor on WebSocket message true
+2025-08-11T11:47:12.234-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : HttpSession supported: true
+2025-08-11T11:47:12.234-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+2025-08-11T11:47:12.234-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.40 using jakarta.servlet/3.0 and jsr356/WebSocket API
+2025-08-11T11:47:12.234-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere Framework 3.0.5.slf4jvaadin1 started.
+2025-08-11T11:47:12.237-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+2025-08-11T11:47:12.237-04:00 DEBUG 5724 --- [           main] c.v.f.s.c.JSR356WebsocketInitializer     : Created AtmosphereFramework for springServlet
+2025-08-11T11:47:12.237-04:00 DEBUG 5724 --- [           main] c.v.f.s.c.JSR356WebsocketInitializer     : Checking if h2Console is a Vaadin Servlet
+2025-08-11T11:47:12.237-04:00 DEBUG 5724 --- [           main] c.v.f.s.c.JSR356WebsocketInitializer     : Checking if dispatcherServlet is a Vaadin Servlet
+2025-08-11T11:47:12.237-04:00 DEBUG 5724 --- [           main] c.v.f.s.c.JSR356WebsocketInitializer     : Checking if atmosphereServlet is a Vaadin Servlet
+2025-08-11T11:47:12.257-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using org.atmosphere.cpr.DefaultAnnotationProcessor for processing annotation
+2025-08-11T11:47:12.258-04:00  INFO 5724 --- [           main] o.a.cpr.DefaultAnnotationProcessor       : AnnotationProcessor class org.atmosphere.cpr.DefaultAnnotationProcessor$BytecodeBasedAnnotationProcessor being used
+2025-08-11T11:47:12.343-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Auto detecting WebSocketHandler in /WEB-INF/classes/
+2025-08-11T11:47:12.344-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+2025-08-11T11:47:12.344-04:00  INFO 5724 --- [           main] o.a.container.JSR356AsyncSupport         : JSR 356 Mapping path /HILLA/push
+2025-08-11T11:47:12.345-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installing Default AtmosphereInterceptors
+2025-08-11T11:47:12.345-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+2025-08-11T11:47:12.345-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+2025-08-11T11:47:12.345-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+2025-08-11T11:47:12.345-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+2025-08-11T11:47:12.345-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.HeartbeatInterceptor : Heartbeat Interceptor Support
+2025-08-11T11:47:12.345-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+2025-08-11T11:47:12.345-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+2025-08-11T11:47:12.346-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+2025-08-11T11:47:12.346-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+2025-08-11T11:47:12.346-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+2025-08-11T11:47:12.346-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+2025-08-11T11:47:12.346-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+2025-08-11T11:47:12.346-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+2025-08-11T11:47:12.346-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+2025-08-11T11:47:12.346-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+2025-08-11T11:47:12.346-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+2025-08-11T11:47:12.346-04:00  INFO 5724 --- [           main] o.a.interceptor.HeartbeatInterceptor     : HeartbeatInterceptor configured with padding value 'X', client frequency 0 seconds and server frequency 60 seconds
+2025-08-11T11:47:12.346-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Heartbeat Interceptor Support with priority AFTER_DEFAULT 
+2025-08-11T11:47:12.346-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+2025-08-11T11:47:12.346-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+2025-08-11T11:47:12.346-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+2025-08-11T11:47:12.346-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+2025-08-11T11:47:12.346-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+2025-08-11T11:47:12.346-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+2025-08-11T11:47:12.347-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+2025-08-11T11:47:12.347-04:00  WARN 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : No BroadcasterCache configured. Broadcasted message between client reconnection will be LOST. It is recommended to configure the org.atmosphere.cache.UUIDBroadcasterCache
+2025-08-11T11:47:12.347-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Default Broadcaster Class: org.atmosphere.util.SimpleBroadcaster
+2025-08-11T11:47:12.347-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Broadcaster Shared List Resources: false
+2025-08-11T11:47:12.347-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Broadcaster Polling Wait Time 100
+2025-08-11T11:47:12.347-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Shared ExecutorService supported: true
+2025-08-11T11:47:12.347-04:00  INFO 5724 --- [           main] org.atmosphere.util.ForkJoinPool         : Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+2025-08-11T11:47:12.347-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+2025-08-11T11:47:12.347-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Async I/O Thread Pool Size: 200
+2025-08-11T11:47:12.347-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+2025-08-11T11:47:12.347-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+2025-08-11T11:47:12.347-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+2025-08-11T11:47:12.347-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Invoke AtmosphereInterceptor on WebSocket message true
+2025-08-11T11:47:12.347-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : HttpSession supported: false
+2025-08-11T11:47:12.347-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using org.atmosphere.inject.InjectableObjectFactory for dependency injection and object creation
+2025-08-11T11:47:12.347-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/10.1.40 using jakarta.servlet/3.0 and jsr356/WebSocket API
+2025-08-11T11:47:12.347-04:00  INFO 5724 --- [           main] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere Framework 3.0.5.slf4jvaadin1 started.
+2025-08-11T11:47:12.361-04:00  INFO 5724 --- [           main] c.v.f.s.DefaultDeploymentConfiguration   : 
+Vaadin is running in DEVELOPMENT mode - do not use for production deployments.
+2025-08-11T11:47:12.387-04:00  INFO 5724 --- [           main] c.vaadin.flow.spring.SpringInstantiator  : The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+2025-08-11T11:47:12.396-04:00 DEBUG 5724 --- [           main] c.v.f.s.c.PushRequestHandler             : Using pre-initialized Atmosphere for servlet springServlet
+2025-08-11T11:47:12.399-04:00 DEBUG 5724 --- [           main] c.v.flow.server.VaadinServletService     : Using 'com.vaadin.flow.server.communication.IndexHtmlRequestHandler' in client mode bootstrapping
+2025-08-11T11:47:12.494-04:00  INFO 5724 --- [           main] c.e.v.config.VaadinSessionFixConfig      : Initializing Vaadin Session Fix Configuration
+2025-08-11T11:47:12.508-04:00 DEBUG 5724 --- [           main] c.v.flow.server.frontend.FrontendUtils   : Auto-detected client-side router to use: react-router
+2025-08-11T11:47:12.511-04:00 DEBUG 5724 --- [           main] com.vaadin.flow.server.VaadinService     : The application has the following routes: 
+2025-08-11T11:47:12.512-04:00 DEBUG 5724 --- [           main] com.vaadin.flow.server.VaadinService     : RouteData{parentLayout=null, url='', parameters={}, navigationTarget=class com.example.vaadinapp.views.MainView, routeAliases=[], menuData=null}'
+2025-08-11T11:47:12.518-04:00  INFO 5724 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-11T11:47:12.526-04:00  INFO 5724 --- [           main] c.e.v.VaadinHazelcastApplication         : Started VaadinHazelcastApplication in 9.949 seconds (process running for 10.497)
+2025-08-11T11:47:21.893-04:00  INFO 5724 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-11T11:47:21.893-04:00  INFO 5724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-11T11:47:21.895-04:00  INFO 5724 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-08-11T11:47:21.918-04:00 DEBUG 5724 --- [nio-8080-exec-1] o.s.s.w.h.S.SESSION_LOGGER               : No session found by id: Caching result for getSession(false) for this HttpServletRequest.
+2025-08-11T11:47:21.919-04:00 DEBUG 5724 --- [nio-8080-exec-1] o.s.s.w.h.S.SESSION_LOGGER               : No session found by id: Caching result for getSession(false) for this HttpServletRequest.
+2025-08-11T11:47:21.929-04:00 DEBUG 5724 --- [nio-8080-exec-1] o.s.s.w.h.S.SESSION_LOGGER               : No session found by id: Caching result for getSession(false) for this HttpServletRequest.
+2025-08-11T11:47:21.929-04:00 DEBUG 5724 --- [nio-8080-exec-1] o.s.s.w.h.S.SESSION_LOGGER               : A new session was created. To help you troubleshoot where the session was created we provided a StackTrace (this is not an error). You can prevent this from appearing by disabling DEBUG logging for org.springframework.session.web.http.SessionRepositoryFilter.SESSION_LOGGER
+
+java.lang.RuntimeException: For debugging purposes only (not an error)
+	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getSession(SessionRepositoryFilter.java:314) ~[spring-session-core-3.4.3.jar!/:3.4.3]
+	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getSession(SessionRepositoryFilter.java:328) ~[spring-session-core-3.4.3.jar!/:3.4.3]
+	at org.springframework.session.web.http.SessionRepositoryFilter$SessionRepositoryRequestWrapper.getSession(SessionRepositoryFilter.java:193) ~[spring-session-core-3.4.3.jar!/:3.4.3]
+	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at jakarta.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:229) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.springframework.security.web.savedrequest.HttpSessionRequestCache.saveRequest(HttpSessionRequestCache.java:78) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at com.vaadin.flow.spring.security.VaadinDefaultRequestCache.saveRequest(VaadinDefaultRequestCache.java:76) ~[vaadin-spring-24.7.6.jar!/:na]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.sendStartAuthentication(ExceptionTranslationFilter.java:218) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.handleAccessDeniedException(ExceptionTranslationFilter.java:197) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.handleSpringSecurityException(ExceptionTranslationFilter.java:178) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:147) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:181) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter.doFilterInternal(DefaultLogoutPageGeneratingFilter.java:58) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:220) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:206) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.authentication.ui.DefaultResourcesFilter.doFilter(DefaultResourcesFilter.java:72) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.4.5.jar!/:6.4.5]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243) ~[spring-webmvc-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238) ~[spring-security-config-6.4.5.jar!/:6.4.5]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:142) ~[spring-session-core-3.4.3.jar!/:3.4.3]
+	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82) ~[spring-session-core-3.4.3.jar!/:3.4.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.6.jar!/:6.2.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.40.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2025-08-11T11:47:21.949-04:00  INFO 5724 --- [nio-8080-exec-1] c.h.i.p.impl.PartitionStateManagerImpl   : [169.254.0.21]:5701 [vaadin-cluster] [5.5.0] Initializing cluster partition table arrangement...
+2025-08-11T11:47:22.045-04:00 DEBUG 5724 --- [aplygin.event-4] .s.s.h.HazelcastIndexedSessionRepository : Session created with id: bc055639-4e1c-4908-87cd-0820c2388445
+2025-08-11T11:47:34.859-04:00  INFO 5724 --- [.ShutdownThread] com.hazelcast.instance.impl.Node         : [169.254.0.21]:5701 [vaadin-cluster] [5.5.0] Running shutdown hook... Current node state: ACTIVE
+2025-08-11T11:47:34.864-04:00  INFO 5724 --- [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-11T11:47:34.867-04:00  INFO 5724 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-11T11:47:34.874-04:00  INFO 5724 --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-11T11:47:34.876-04:00  INFO 5724 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-11T11:47:34.880-04:00  INFO 5724 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

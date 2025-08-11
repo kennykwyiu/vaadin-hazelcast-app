@@ -1,0 +1,17 @@
+{
+  "frontendFolder": "/Users/kennyyiu/Downloads/Vaadin24 App with Hazelcast, Spring Boot, and Apache (1)/vaadin-hazelcast-complete-solution/vaadin-hazelcast-app/./src/main/frontend",
+  "themeFolder": "themes",
+  "themeResourceFolder": "/Users/kennyyiu/Downloads/Vaadin24 App with Hazelcast, Spring Boot, and Apache (1)/vaadin-hazelcast-complete-solution/vaadin-hazelcast-app/./src/main/frontend/generated/jar-resources",
+  "staticOutput": "/Users/kennyyiu/Downloads/Vaadin24 App with Hazelcast, Spring Boot, and Apache (1)/vaadin-hazelcast-complete-solution/vaadin-hazelcast-app/target/classes/META-INF/VAADIN/webapp/VAADIN/static",
+  "generatedFolder": "generated",
+  "statsOutput": "/Users/kennyyiu/Downloads/Vaadin24 App with Hazelcast, Spring Boot, and Apache (1)/vaadin-hazelcast-complete-solution/vaadin-hazelcast-app/target/classes/META-INF/VAADIN/config",
+  "frontendBundleOutput": "/Users/kennyyiu/Downloads/Vaadin24 App with Hazelcast, Spring Boot, and Apache (1)/vaadin-hazelcast-complete-solution/vaadin-hazelcast-app/target/classes/META-INF/VAADIN/webapp",
+  "devBundleOutput": "/Users/kennyyiu/Downloads/Vaadin24 App with Hazelcast, Spring Boot, and Apache (1)/vaadin-hazelcast-complete-solution/vaadin-hazelcast-app/target/dev-bundle/webapp",
+  "devBundleStatsOutput": "/Users/kennyyiu/Downloads/Vaadin24 App with Hazelcast, Spring Boot, and Apache (1)/vaadin-hazelcast-complete-solution/vaadin-hazelcast-app/target/dev-bundle/config",
+  "jarResourcesFolder": "/Users/kennyyiu/Downloads/Vaadin24 App with Hazelcast, Spring Boot, and Apache (1)/vaadin-hazelcast-complete-solution/vaadin-hazelcast-app/./src/main/frontend/generated/jar-resources",
+  "themeName": "",
+  "clientServiceWorkerSource": "/Users/kennyyiu/Downloads/Vaadin24 App with Hazelcast, Spring Boot, and Apache (1)/vaadin-hazelcast-complete-solution/vaadin-hazelcast-app/target/sw.ts",
+  "pwaEnabled": false,
+  "offlineEnabled": false,
+  "offlinePath": "'offline.html'"
+}

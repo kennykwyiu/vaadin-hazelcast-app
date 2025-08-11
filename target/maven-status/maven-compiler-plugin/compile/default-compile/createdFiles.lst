@@ -1,0 +1,7 @@
+com/example/vaadinapp/VaadinHazelcastApplication.class
+com/example/vaadinapp/views/MainView.class
+com/example/vaadinapp/config/HazelcastConfig.class
+com/example/vaadinapp/config/VaadinSessionSerializer.class
+com/example/vaadinapp/config/SecurityConfig.class
+com/example/vaadinapp/config/SessionConfig.class
+com/example/vaadinapp/config/VaadinSessionFixConfig.class

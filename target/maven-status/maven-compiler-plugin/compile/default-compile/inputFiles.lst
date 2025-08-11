@@ -1,0 +1,7 @@
+/home/ubuntu/vaadin-hazelcast-app/src/main/java/com/example/vaadinapp/VaadinHazelcastApplication.java
+/home/ubuntu/vaadin-hazelcast-app/src/main/java/com/example/vaadinapp/config/HazelcastConfig.java
+/home/ubuntu/vaadin-hazelcast-app/src/main/java/com/example/vaadinapp/config/SecurityConfig.java
+/home/ubuntu/vaadin-hazelcast-app/src/main/java/com/example/vaadinapp/config/SessionConfig.java
+/home/ubuntu/vaadin-hazelcast-app/src/main/java/com/example/vaadinapp/config/VaadinSessionFixConfig.java
+/home/ubuntu/vaadin-hazelcast-app/src/main/java/com/example/vaadinapp/config/VaadinSessionSerializer.java
+/home/ubuntu/vaadin-hazelcast-app/src/main/java/com/example/vaadinapp/views/MainView.java

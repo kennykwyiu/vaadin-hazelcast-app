@@ -1,0 +1,31 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-08-11T11:46:19.042-04:00  INFO 5541 --- [           main] c.e.v.VaadinHazelcastApplication         : Starting VaadinHazelcastApplication v1.0.0 using Java 17.0.15 with PID 5541 (/home/ubuntu/vaadin-hazelcast-app/target/vaadin-hazelcast-app-1.0.0.jar started by ubuntu in /home/ubuntu/vaadin-hazelcast-app)
+2025-08-11T11:46:19.046-04:00 DEBUG 5541 --- [           main] c.e.v.VaadinHazelcastApplication         : Running with Spring Boot v3.4.5, Spring v6.2.6
+2025-08-11T11:46:19.049-04:00  INFO 5541 --- [           main] c.e.v.VaadinHazelcastApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-08-11T11:46:19.868-04:00  WARN 5541 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'sessionRepository' defined in class path resource [com/example/vaadinapp/config/HazelcastConfig.class]: Cannot register bean definition [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=hazelcastConfig; factoryMethodName=sessionRepository; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/example/vaadinapp/config/HazelcastConfig.class]] for bean 'sessionRepository' since there is already [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=org.springframework.session.hazelcast.config.annotation.web.http.HazelcastHttpSessionConfiguration; factoryMethodName=sessionRepository; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [org/springframework/session/hazelcast/config/annotation/web/http/HazelcastHttpSessionConfiguration.class]] bound.
+2025-08-11T11:46:19.878-04:00  INFO 5541 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-08-11T11:46:19.911-04:00 ERROR 5541 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'sessionRepository', defined in class path resource [com/example/vaadinapp/config/HazelcastConfig.class], could not be registered. A bean with that name has already been defined in class path resource [org/springframework/session/hazelcast/config/annotation/web/http/HazelcastHttpSessionConfiguration.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
