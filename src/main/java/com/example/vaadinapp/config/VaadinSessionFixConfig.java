@@ -13,10 +13,17 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
- * Simplified solution for the Vaadin 24 + Hazelcast recursive reloading problem.
+ * Robust solution for the Vaadin 24 + Hazelcast recursive reloading problem.
  *
- * The main fix is to prevent non-serializable Vaadin objects from being stored
- * in the HTTP session, which causes serialization issues with Hazelcast.
+ * This configuration handles edge cases and null pointer exceptions that can occur
+ * in development environments like IntelliJ IDEA, while maintaining the core
+ * functionality of preventing recursive reloading issues.
+ *
+ * Key improvements:
+ * - Comprehensive null checks to prevent NPEs
+ * - Graceful handling of incomplete session initialization
+ * - Enhanced logging for debugging
+ * - Defensive programming practices
  */
 @Configuration
 @Order(1)
@@ -29,52 +36,148 @@ public class VaadinSessionFixConfig implements VaadinServiceInitListener {
 
     @Override
     public void serviceInit(ServiceInitEvent event) {
-        logger.info("Initializing Vaadin Session Fix Configuration");
+        logger.info("Initializing Vaadin Session Fix Configuration with robust error handling");
 
-        // Handle session initialization
+        // Handle session initialization with comprehensive error handling
         event.getSource().addSessionInitListener(sessionInitEvent -> {
-            VaadinSession vaadinSession = sessionInitEvent.getSession();
-            String sessionId = vaadinSession.getSession().getId();
-
-            logger.debug("Session initialized: {}", sessionId);
-
-            // Prevent recursive processing
-            AtomicBoolean processing = sessionProcessing.computeIfAbsent(sessionId, k -> new AtomicBoolean(false));
-            if (processing.compareAndSet(false, true)) {
-                try {
-                    configureSessionForClustering(vaadinSession);
-                } finally {
-                    processing.set(false);
-                }
+            try {
+                handleSessionInitialization(sessionInitEvent);
+            } catch (Exception e) {
+                logger.error("Error during session initialization handling", e);
+                // Don't rethrow to prevent application startup failure
             }
         });
 
-        // Handle session destruction
+        // Handle session destruction with error handling
         event.getSource().addSessionDestroyListener(sessionDestroyEvent -> {
-            VaadinSession vaadinSession = sessionDestroyEvent.getSession();
-            String sessionId = vaadinSession.getSession().getId();
-
-            logger.debug("Session destroyed: {}", sessionId);
-
-            // Clean up tracking
-            sessionProcessing.remove(sessionId);
+            try {
+                handleSessionDestruction(sessionDestroyEvent);
+            } catch (Exception e) {
+                logger.error("Error during session destruction handling", e);
+                // Don't rethrow to prevent issues during shutdown
+            }
         });
 
-        // Add UI init listener to handle UI-level session issues
+        // Add UI init listener with error handling
         event.getSource().addUIInitListener(uiInitEvent -> {
-            logger.debug("UI initialized for session: {}",
-                uiInitEvent.getUI().getSession().getSession().getId());
-
-            // Configure UI to prevent session issues
-            configureUIForClustering(uiInitEvent.getUI());
+            try {
+                handleUIInitialization(uiInitEvent);
+            } catch (Exception e) {
+                logger.error("Error during UI initialization handling", e);
+                // Don't rethrow to prevent UI creation failure
+            }
         });
     }
 
-    private void configureSessionForClustering(VaadinSession vaadinSession) {
+    private void handleSessionInitialization(com.vaadin.flow.server.SessionInitEvent sessionInitEvent) {
+        if (sessionInitEvent == null) {
+            logger.warn("SessionInitEvent is null. This should not happen under normal circumstances.");
+            return;
+        }
+
+        VaadinSession vaadinSession = sessionInitEvent.getSession();
+        if (vaadinSession == null) {
+            logger.warn("VaadinSession is null during session initialization. This can happen in development environments or during application startup. Skipping configuration.");
+            return;
+        }
+
+        WrappedSession wrappedSession = null;
+        String sessionId = null;
+
+        try {
+            wrappedSession = vaadinSession.getSession();
+            if (wrappedSession == null) {
+                logger.warn("WrappedSession is null for VaadinSession. This can happen when the HTTP session is not yet fully initialized. Skipping configuration.");
+                return;
+            }
+
+            sessionId = wrappedSession.getId();
+            if (sessionId == null || sessionId.trim().isEmpty()) {
+                logger.warn("Session ID is null or empty. This indicates an incomplete session initialization. Skipping configuration.");
+                return;
+            }
+
+        } catch (Exception e) {
+            logger.warn("Exception while accessing session information: {}. This can happen in development environments. Skipping configuration.", e.getMessage());
+            return;
+        }
+
+        logger.debug("Session initialized: {}", sessionId);
+
+        // Prevent recursive processing
+        AtomicBoolean processing = sessionProcessing.computeIfAbsent(sessionId, k -> new AtomicBoolean(false));
+        if (processing.compareAndSet(false, true)) {
+            try {
+                configureSessionForClustering(vaadinSession, wrappedSession, sessionId);
+            } finally {
+                processing.set(false);
+            }
+        } else {
+            logger.debug("Session {} is already being processed, skipping duplicate processing", sessionId);
+        }
+    }
+
+    private void handleSessionDestruction(com.vaadin.flow.server.SessionDestroyEvent sessionDestroyEvent) {
+        if (sessionDestroyEvent == null) {
+            logger.warn("SessionDestroyEvent is null. This should not happen under normal circumstances.");
+            return;
+        }
+
+        VaadinSession vaadinSession = sessionDestroyEvent.getSession();
+        if (vaadinSession == null) {
+            logger.debug("VaadinSession is null during session destruction. This is normal during shutdown.");
+            return;
+        }
+
+        String sessionId = null;
         try {
             WrappedSession wrappedSession = vaadinSession.getSession();
-            String sessionId = wrappedSession.getId();
+            if (wrappedSession != null) {
+                sessionId = wrappedSession.getId();
+            }
+        } catch (Exception e) {
+            logger.debug("Exception while accessing session ID during destruction: {}. This is normal during shutdown.", e.getMessage());
+        }
 
+        if (sessionId != null) {
+            logger.debug("Session destroyed: {}", sessionId);
+            // Clean up tracking
+            sessionProcessing.remove(sessionId);
+        } else {
+            logger.debug("Session destroyed but ID could not be determined");
+        }
+    }
+
+    private void handleUIInitialization(com.vaadin.flow.server.UIInitEvent uiInitEvent) {
+        if (uiInitEvent == null || uiInitEvent.getUI() == null) {
+            logger.warn("UIInitEvent or UI is null. This should not happen under normal circumstances.");
+            return;
+        }
+
+        try {
+            VaadinSession vaadinSession = uiInitEvent.getUI().getSession();
+            if (vaadinSession != null) {
+                WrappedSession wrappedSession = vaadinSession.getSession();
+                if (wrappedSession != null) {
+                    String sessionId = wrappedSession.getId();
+                    logger.debug("UI initialized for session: {}", sessionId != null ? sessionId : "unknown");
+                } else {
+                    logger.debug("UI initialized but WrappedSession is null");
+                }
+            } else {
+                logger.debug("UI initialized but VaadinSession is null");
+            }
+
+            // Configure UI to prevent session issues
+            configureUIForClustering(uiInitEvent.getUI());
+
+        } catch (Exception e) {
+            logger.warn("Exception during UI initialization: {}. This can happen in development environments.", e.getMessage());
+        }
+    }
+
+    private void configureSessionForClustering(VaadinSession vaadinSession, WrappedSession wrappedSession, String sessionId) {
+        try {
             logger.debug("Configuring session for clustering: {}", sessionId);
 
             // Mark session as clustered
@@ -91,7 +194,7 @@ public class VaadinSessionFixConfig implements VaadinServiceInitListener {
             logger.debug("Session configured for clustering: {}", sessionId);
 
         } catch (Exception e) {
-            logger.error("Error configuring session for clustering", e);
+            logger.error("Error configuring session for clustering: {}", sessionId, e);
         }
     }
 
@@ -112,25 +215,43 @@ public class VaadinSessionFixConfig implements VaadinServiceInitListener {
 
     private void cleanupSessionAttributes(WrappedSession wrappedSession) {
         try {
-            // Get all attribute names
+            // Get all attribute names safely
             java.util.Set<String> attributeNames = wrappedSession.getAttributeNames();
+            if (attributeNames == null) {
+                logger.debug("Session attribute names is null, skipping cleanup");
+                return;
+            }
+
             java.util.List<String> attributesToRemove = new java.util.ArrayList<>();
 
             // Identify problematic attributes
             for (String attributeName : attributeNames) {
+                if (attributeName == null) {
+                    continue; // Skip null attribute names
+                }
+
                 if (!isSafeAttribute(attributeName)) {
-                    Object attribute = wrappedSession.getAttribute(attributeName);
-                    if (attribute != null && !isSerializable(attribute)) {
+                    try {
+                        Object attribute = wrappedSession.getAttribute(attributeName);
+                        if (attribute != null && !isSerializable(attribute)) {
+                            attributesToRemove.add(attributeName);
+                            logger.debug("Marking non-serializable attribute for removal: {}", attributeName);
+                        }
+                    } catch (Exception e) {
+                        logger.debug("Exception while checking attribute {}: {}. Marking for removal.", attributeName, e.getMessage());
                         attributesToRemove.add(attributeName);
-                        logger.debug("Marking non-serializable attribute for removal: {}", attributeName);
                     }
                 }
             }
 
             // Remove problematic attributes
             for (String attributeName : attributesToRemove) {
-                wrappedSession.removeAttribute(attributeName);
-                logger.debug("Removed non-serializable attribute: {}", attributeName);
+                try {
+                    wrappedSession.removeAttribute(attributeName);
+                    logger.debug("Removed non-serializable attribute: {}", attributeName);
+                } catch (Exception e) {
+                    logger.debug("Exception while removing attribute {}: {}", attributeName, e.getMessage());
+                }
             }
 
         } catch (Exception e) {
@@ -139,17 +260,30 @@ public class VaadinSessionFixConfig implements VaadinServiceInitListener {
     }
 
     private boolean isSafeAttribute(String attributeName) {
+        if (attributeName == null) {
+            return false;
+        }
+
         // Allow user-defined attributes and basic session attributes
         return attributeName.startsWith("vaadin.session.") ||
-               attributeName.equals("userMessage") ||
-               attributeName.equals("saveTime") ||
-               attributeName.startsWith("org.springframework.session");
+                attributeName.equals("userMessage") ||
+                attributeName.equals("saveTime") ||
+                attributeName.startsWith("org.springframework.session");
     }
 
     private boolean isSerializable(Object obj) {
-        return obj instanceof java.io.Serializable &&
-               !(obj instanceof com.vaadin.flow.component.Component) &&
-               !(obj instanceof com.vaadin.flow.server.VaadinSession);
+        if (obj == null) {
+            return true; // null is always serializable
+        }
+
+        try {
+            return obj instanceof java.io.Serializable &&
+                    !(obj instanceof com.vaadin.flow.component.Component) &&
+                    !(obj instanceof com.vaadin.flow.server.VaadinSession);
+        } catch (Exception e) {
+            // If we can't determine serializability, assume it's not serializable
+            logger.debug("Exception while checking serializability of {}: {}", obj.getClass().getName(), e.getMessage());
+            return false;
+        }
     }
 }
-
