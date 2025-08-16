@@ -63,8 +63,27 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-spring-boot-starter</artifactId>
+            <exclusions>
+                <!-- EXCLUDE ALL PUSH-RELATED COMPONENTS -->
+                <exclusion>
+                    <groupId>com.vaadin</groupId>
+                    <artifactId>flow-push</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.vaadin.external.atmosphere</groupId>
+                    <artifactId>atmosphere-runtime</artifactId>
+                </exclusion>
+                <!-- EXCLUDE HILLA PUSH COMPONENTS -->
+                <exclusion>
+                    <groupId>com.vaadin</groupId>
+                    <artifactId>hilla-dev</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.vaadin</groupId>
+                    <artifactId>hilla</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
-
         <!-- Hazelcast for session clustering -->
         <dependency>
             <groupId>com.hazelcast</groupId>
