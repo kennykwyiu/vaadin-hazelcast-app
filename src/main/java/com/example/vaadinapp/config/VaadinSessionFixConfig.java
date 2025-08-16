@@ -4,6 +4,7 @@ import com.vaadin.flow.server.ServiceInitEvent;
 import com.vaadin.flow.server.VaadinServiceInitListener;
 import com.vaadin.flow.server.VaadinSession;
 import com.vaadin.flow.server.WrappedSession;
+import com.vaadin.flow.shared.communication.PushMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
@@ -18,8 +19,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * The main fix is to prevent non-serializable Vaadin objects from being stored
  * in the HTTP session, which causes serialization issues with Hazelcast.
  */
-@Configuration
-@Order(1)
+//@Configuration
+//@Order(1)
 public class VaadinSessionFixConfig implements VaadinServiceInitListener {
 
     private static final Logger logger = LoggerFactory.getLogger(VaadinSessionFixConfig.class);
@@ -34,8 +35,14 @@ public class VaadinSessionFixConfig implements VaadinServiceInitListener {
         // Handle session initialization
         event.getSource().addSessionInitListener(sessionInitEvent -> {
             VaadinSession vaadinSession = sessionInitEvent.getSession();
-            String sessionId = vaadinSession.getSession().getId();
 
+            // Add null safety check first
+            if (vaadinSession == null || vaadinSession.getSession() == null) {
+                logger.debug("Session initialized: underlying HTTP session is null");
+                return;
+            }
+
+            String sessionId = vaadinSession.getSession().getId();
             logger.debug("Session initialized: {}", sessionId);
 
             // Prevent recursive processing
@@ -52,21 +59,24 @@ public class VaadinSessionFixConfig implements VaadinServiceInitListener {
         // Handle session destruction
         event.getSource().addSessionDestroyListener(sessionDestroyEvent -> {
             VaadinSession vaadinSession = sessionDestroyEvent.getSession();
-            String sessionId = vaadinSession.getSession().getId();
-
-            logger.debug("Session destroyed: {}", sessionId);
-
-            // Clean up tracking
-            sessionProcessing.remove(sessionId);
+            if (vaadinSession != null && vaadinSession.getSession() != null) {
+                String sessionId = vaadinSession.getSession().getId();
+                logger.debug("Session destroyed: {}", sessionId);
+                sessionProcessing.remove(sessionId);
+            } else {
+                logger.debug("Session destroyed: underlying session is null");
+            }
         });
 
         // Add UI init listener to handle UI-level session issues
         event.getSource().addUIInitListener(uiInitEvent -> {
-            logger.debug("UI initialized for session: {}",
-                uiInitEvent.getUI().getSession().getSession().getId());
-
-            // Configure UI to prevent session issues
-            configureUIForClustering(uiInitEvent.getUI());
+            VaadinSession vaadinSession = uiInitEvent.getUI().getSession();
+            if (vaadinSession != null && vaadinSession.getSession() != null) {
+                logger.debug("UI initialized for session: {}", vaadinSession.getSession().getId());
+                configureUIForClustering(uiInitEvent.getUI());
+            } else {
+                logger.debug("UI initialized: underlying session is null");
+            }
         });
     }
 
@@ -103,7 +113,7 @@ public class VaadinSessionFixConfig implements VaadinServiceInitListener {
             });
 
             // Configure push mode for better session handling
-            ui.getPushConfiguration().setPushMode(com.vaadin.flow.shared.communication.PushMode.AUTOMATIC);
+            ui.getPushConfiguration().setPushMode(PushMode.DISABLED);
 
         } catch (Exception e) {
             logger.error("Error configuring UI for clustering", e);
