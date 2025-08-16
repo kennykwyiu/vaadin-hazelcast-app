@@ -1,0 +1,3 @@
+target/
+*.jar
+node_modules/
