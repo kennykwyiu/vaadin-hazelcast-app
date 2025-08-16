@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * Configuration to handle Vaadin session management with Hazelcast
  * and prevent recursive reloading issues.
  */
-@Configuration
+//@Configuration
 public class SessionConfig implements VaadinServiceInitListener {
     
     private static final Logger logger = LoggerFactory.getLogger(SessionConfig.class);
@@ -25,10 +25,15 @@ public class SessionConfig implements VaadinServiceInitListener {
             // Configure session to work properly with Hazelcast
             configureSessionForClustering(session);
         });
-        
+
         event.getSource().addSessionDestroyListener(sessionDestroyEvent -> {
             VaadinSession session = sessionDestroyEvent.getSession();
-            logger.debug("Vaadin session destroyed: {}", session.getSession().getId());
+            // Add null safety check
+            if (session != null && session.getSession() != null) {
+                logger.debug("Vaadin session destroyed: {}", session.getSession().getId());
+            } else {
+                logger.debug("Vaadin session destroyed: session or underlying HTTP session is null");
+            }
         });
     }
     
